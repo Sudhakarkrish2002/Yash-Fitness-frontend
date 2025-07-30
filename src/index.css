@@ -1,0 +1,171 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #ffffff;
+  background-color: #0a0a0a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #00ff00;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #00cc00;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling on mobile */
+  -webkit-overflow-scrolling: touch;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #00ff00;
+  color: #000000;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  /* Ensure buttons are touch-friendly */
+  min-height: 44px;
+  min-width: 44px;
+}
+button:hover {
+  border-color: #00cc00;
+  background-color: #00cc00;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Enhanced Responsive Typography */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+    line-height: 1.2;
+  }
+  
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+    line-height: 1.15;
+  }
+  
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2.8em;
+    line-height: 1.1;
+  }
+  
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  h1 {
+    font-size: 3em;
+    line-height: 1.1;
+  }
+  
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1441px) {
+  h1 {
+    font-size: 3.5em;
+    line-height: 1.1;
+  }
+  
+  body {
+    font-size: 17px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  button {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  a {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* High DPI Display Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Reduced Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #ffffff;
+    background-color: #0a0a0a;
+  }
+  a:hover {
+    color: #00cc00;
+  }
+  button {
+    background-color: #00ff00;
+    color: #000000;
+  }
+}
