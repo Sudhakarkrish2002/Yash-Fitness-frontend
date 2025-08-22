@@ -5,7 +5,7 @@
 
 /* Services Container */
 .services-container {
-  padding: 6rem 2rem;
+  padding: 4rem 2rem;
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
   position: relative;
 }
@@ -31,8 +31,8 @@
 
 .services-container h2 {
   text-align: center;
-  font-size: 3rem;
-  margin-bottom: 4rem;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
   color: #ffffff;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -41,7 +41,7 @@
 
 .services-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .services-logo {
@@ -78,32 +78,29 @@
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(0, 255, 0, 0.3);
   color: #ffffff;
-  padding: 2.5rem;
-  border-radius: 24px;
+  padding: 2rem;
+  border-radius: 20px;
   text-align: center;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.3s ease;
   box-shadow: 0 8px 32px rgba(0, 255, 0, 0.1);
-  animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .service-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(0, 255, 0, 0.2);
-  background: rgba(0, 0, 0, 0.8);
+  /* Hover effect removed for better user experience */
 }
 
 .service-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
   display: inline-block;
-  padding: 1.5rem;
+  padding: 1rem;
   background: linear-gradient(135deg, rgba(0, 255, 0, 0.1), rgba(0, 204, 0, 0.1));
   border-radius: 20px;
   transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .service-item:hover .service-icon {
-  transform: scale(1.1);
+  /* Hover effect removed for better user experience */
 }
 
 .service-item h3 {
@@ -186,17 +183,16 @@
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(0, 255, 0, 0.3);
-  border-radius: 24px;
-  padding: 2.5rem;
+  border-radius: 20px;
+  padding: 2rem;
   text-align: center;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
 .fee-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(0, 255, 0, 0.2);
+  /* Hover effect removed for better user experience */
 }
 
 .fee-card.featured {
@@ -208,15 +204,17 @@
 .fee-badge {
   position: absolute;
   top: 1rem;
-  right: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
   background: #00ff00;
   color: #000000;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
+  padding: 0.3rem 1rem;
+  border-radius: 15px;
+  font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  z-index: 10;
 }
 
 .fee-header h3 {
@@ -241,6 +239,19 @@
   font-size: 1rem;
   color: #cccccc;
   font-weight: 400;
+}
+
+.fee-savings {
+  background: linear-gradient(45deg, #00ff00, #00cc00);
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin-top: 0.5rem;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .fee-features ul {
@@ -295,13 +306,18 @@
 }
 
 .fee-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 255, 0, 0.4);
+  /* Hover effect removed for better user experience */
 }
 
 .fee-button.featured {
   background: linear-gradient(45deg, #ffffff, #f0f0f0);
   color: #000000;
+}
+
+.fee-button-link {
+  text-decoration: none;
+  display: block;
+  width: 100%;
 }
 
 /* Additional Services */
@@ -333,8 +349,7 @@
 }
 
 .service-price-item:hover {
-  border-color: rgba(0, 255, 0, 0.5);
-  transform: translateY(-4px);
+  /* Hover effect removed for better user experience */
 }
 
 .service-price-item h4 {
@@ -386,8 +401,7 @@
 }
 
 .payment-item:hover {
-  border-color: rgba(0, 255, 0, 0.5);
-  background: rgba(0, 255, 0, 0.1);
+  /* Hover effect removed for better user experience */
 }
 
 .payment-icon {
@@ -400,33 +414,498 @@
   font-weight: 500;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+
+/* Small screens (mobile) - sm */
+@media (max-width: 640px) {
+  .services-container {
+    padding: 3rem 1rem;
+  }
+  
   .services-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .services-container h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .services-logo {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .service-item {
+    padding: 1.5rem;
+  }
+  
+  .service-icon {
+    font-size: 2rem;
+    padding: 0.8rem;
+  }
+  
+  .service-item h3 {
+    font-size: 1.3rem;
+  }
+  
+  .service-item p {
+    font-size: 0.9rem;
+  }
+  
+  .fees-section {
+    padding: 3rem 1rem;
+  }
+  
+  .fees-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .fee-card {
+    padding: 1.5rem;
+  }
+  
+  .fee-header h3 {
+    font-size: 1.4rem;
+  }
+  
+  .fee-price .amount {
+    font-size: 1.8rem;
+  }
+
+
+  
+  .service-pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .payment-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .fees-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Medium screens (tablet) - md */
+@media (min-width: 641px) and (max-width: 768px) {
+  .services-container {
+    padding: 4rem 1.5rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
   
   .services-container h2 {
     font-size: 2.5rem;
+    margin-bottom: 3rem;
   }
-
+  
+  .services-logo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .service-item {
+    padding: 2rem;
+  }
+  
+  .service-icon {
+    font-size: 2.5rem;
+    padding: 1rem;
+  }
+  
+  .service-item h3 {
+    font-size: 1.4rem;
+  }
+  
+  .service-item p {
+    font-size: 0.95rem;
+  }
+  
+  .fees-section {
+    padding: 4rem 1.5rem;
+  }
+  
   .fees-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
   
   .fee-card.featured {
-    transform: none;
+    order: -1;
   }
   
+  .fee-card {
+    padding: 2rem;
+  }
+  
+  .fee-header h3 {
+    font-size: 1.5rem;
+  }
+  
+  .fee-price .amount {
+    font-size: 2rem;
+  }
+
+
+  
   .service-pricing-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .payment-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
   
   .fees-section h2 {
     font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+/* Large screens (laptop) - lg */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .services-container {
+    padding: 5rem 2rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .services-container h2 {
+    font-size: 2.8rem;
+    margin-bottom: 4rem;
+  }
+  
+  .services-logo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .service-item {
+    padding: 2.5rem;
+  }
+  
+  .service-icon {
+    font-size: 3rem;
+    padding: 1.5rem;
+  }
+  
+  .service-item h3 {
+    font-size: 1.5rem;
+  }
+  
+  .service-item p {
+    font-size: 1rem;
+  }
+  
+  .fees-section {
+    padding: 5rem 2rem;
+  }
+  
+  .fees-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .fee-card.featured {
+    order: -1;
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(0, 255, 0, 0.3);
+  }
+  
+  .fee-card {
+    padding: 3rem;
+    border-radius: 20px;
+  }
+  
+  .fee-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .fee-price .amount {
+    font-size: 2.5rem;
+  }
+  
+  .fee-price .period {
+    font-size: 1.1rem;
+  }
+  
+  .fee-features ul {
+    gap: 0.8rem;
+  }
+  
+  .fee-features li {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+  
+  .fee-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .service-pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .payment-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .fees-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 4rem;
+  }
+  
+  .additional-services h3 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .payment-options h3 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .service-price-item {
+    padding: 2rem;
+  }
+  
+  .service-price-item h4 {
+    font-size: 1.3rem;
+  }
+  
+  .service-price-item .price {
+    font-size: 1.6rem;
+  }
+  
+  .payment-item {
+    padding: 1.5rem;
+  }
+  
+  .payment-icon {
+    font-size: 2.2rem;
+  }
+}
+
+/* Extra large screens (desktop) - xl */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .services-container {
+    padding: 6rem 2.5rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .services-container h2 {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+  }
+  
+  .services-logo {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .service-item {
+    padding: 2.5rem;
+  }
+  
+  .service-icon {
+    font-size: 3rem;
+    padding: 1.5rem;
+  }
+  
+  .service-item h3 {
+    font-size: 1.6rem;
+  }
+  
+  .service-item p {
+    font-size: 1.05rem;
+  }
+  
+  .fees-section {
+    padding: 6rem 2.5rem;
+  }
+  
+  .fees-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .fee-card {
+    padding: 2.5rem;
+  }
+  
+  .fee-header h3 {
+    font-size: 1.7rem;
+  }
+  
+  .fee-price .amount {
+    font-size: 2.3rem;
+  }
+  
+  .service-pricing-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .payment-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .fees-section h2 {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+  }
+}
+
+/* 2XL screens (ultra-wide) - 2xl */
+@media (min-width: 1281px) {
+  .services-container {
+    padding: 8rem 3rem;
+  }
+  
+  .container {
+    max-width: 1400px;
+  }
+  
+  .services-container h2 {
+    font-size: 3.5rem;
+    margin-bottom: 5rem;
+  }
+  
+  .services-logo {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+  
+  .service-item {
+    padding: 3rem;
+  }
+  
+  .service-icon {
+    font-size: 3.5rem;
+    padding: 2rem;
+  }
+  
+  .service-item h3 {
+    font-size: 1.8rem;
+  }
+  
+  .service-item p {
+    font-size: 1.1rem;
+  }
+  
+  .fees-section {
+    padding: 8rem 3rem;
+  }
+  
+  .fees-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+  
+  .fee-card {
+    padding: 3rem;
+  }
+  
+  .fee-header h3 {
+    font-size: 2rem;
+  }
+  
+  .fee-price .amount {
+    font-size: 2.5rem;
+  }
+
+
+  
+  .service-pricing-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .payment-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .fees-section h2 {
+    font-size: 3.5rem;
+    margin-bottom: 5rem;
+  }
+  
+  .additional-services h3 {
+    font-size: 2.5rem;
+  }
+  
+  .payment-options h3 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Landscape Mobile Orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .services-container {
+    padding: 3rem 1.5rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .fees-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .service-pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .service-item,
+  .fee-card,
+  .service-price-item,
+  .payment-item {
+    min-height: 44px;
+  }
+  
+  .fee-button {
+    min-height: 44px;
+    min-width: 44px;
   }
 } 

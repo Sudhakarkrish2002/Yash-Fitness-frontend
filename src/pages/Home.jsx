@@ -1,5 +1,6 @@
 import './Home.css'
 import gymLogo from '../assets/gym logo.jpeg'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -28,7 +29,9 @@ const Home = () => {
               </div>
             </div>
             <div className="hero-buttons">
-              <button className="btn-primary">Join Now</button>
+              <Link to="/register" className="btn-primary-link">
+                <button className="btn-primary">Join Now</button>
+              </Link>
               <button className="btn-secondary">Free Trial</button>
             </div>
           </div>

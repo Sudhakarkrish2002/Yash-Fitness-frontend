@@ -172,8 +172,45 @@ a {
 }
 
 /* Enhanced Responsive Design - All Device Types */
-/* Mobile Phones (320px - 480px) */
-@media (max-width: 480px) {
+
+/* iPhone SE (375px) */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 0.8rem;
+  }
+  
+  h1 {
+    font-size: 1.6rem !important;
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 1.3rem !important;
+    line-height: 1.2;
+  }
+  
+  h3 {
+    font-size: 1.1rem !important;
+  }
+  
+  p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  button {
+    padding: 0.7em 1.3em;
+    font-size: 0.9rem;
+  }
+  
+  .apple-button {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+/* iPhone XR, 11 (414px) */
+@media (min-width: 376px) and (max-width: 414px) {
   .container {
     padding: 0 1rem;
   }
@@ -208,6 +245,78 @@ a {
   }
 }
 
+/* iPhone 12 Pro, 13 Pro, 14 Pro (390px) */
+@media (min-width: 415px) and (max-width: 430px) {
+  .container {
+    padding: 0 1.2rem;
+  }
+  
+  h1 {
+    font-size: 1.9rem !important;
+    line-height: 1.3;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.3;
+  }
+  
+  h3 {
+    font-size: 1.3rem !important;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  button {
+    padding: 0.9em 1.6em;
+    font-size: 1rem;
+  }
+  
+  .apple-button {
+    padding: 11px 22px;
+    font-size: 15px;
+  }
+}
+
+/* iPhone 14 Pro Max (428px) */
+@media (min-width: 431px) and (max-width: 480px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.3;
+  }
+  
+  h2 {
+    font-size: 1.6rem !important;
+    line-height: 1.3;
+  }
+  
+  h3 {
+    font-size: 1.4rem !important;
+  }
+  
+  p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+  
+  button {
+    padding: 1em 1.8em;
+    font-size: 1.05rem;
+  }
+  
+  .apple-button {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+}
+
 /* Large Mobile Phones (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
   .container {
@@ -233,6 +342,75 @@ a {
   .apple-button {
     padding: 11px 22px;
     font-size: 15px;
+  }
+}
+
+/* Pixel 7 (412px) */
+@media (min-width: 412px) and (max-width: 430px) {
+  .container {
+    padding: 0 1.3rem;
+  }
+  
+  h1 {
+    font-size: 1.9rem !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  h3 {
+    font-size: 1.3rem !important;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* Samsung Galaxy S8+, S20 Ultra (360px - 412px) */
+@media (min-width: 360px) and (max-width: 412px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  h2 {
+    font-size: 1.4rem !important;
+  }
+  
+  h3 {
+    font-size: 1.2rem !important;
+  }
+  
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Samsung Galaxy A51/71 (412px - 480px) */
+@media (min-width: 413px) and (max-width: 480px) {
+  .container {
+    padding: 0 1.4rem;
+  }
+  
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.6rem !important;
+  }
+  
+  h3 {
+    font-size: 1.4rem !important;
+  }
+  
+  p {
+    font-size: 1.05rem;
   }
 }
 
@@ -313,6 +491,121 @@ a {
   .apple-button {
     padding: 14px 28px;
     font-size: 18px;
+  }
+}
+
+/* Surface Pro 7 (912px) */
+@media (min-width: 912px) and (max-width: 1024px) {
+  .container {
+    padding: 0 2.5rem;
+  }
+  
+  h1 {
+    font-size: 3rem !important;
+  }
+  
+  h2 {
+    font-size: 2.2rem !important;
+  }
+  
+  h3 {
+    font-size: 1.6rem !important;
+  }
+  
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Surface Duo (540px) */
+@media (min-width: 540px) and (max-width: 720px) {
+  .container {
+    padding: 0 2rem;
+  }
+  
+  h1 {
+    font-size: 2.4rem !important;
+  }
+  
+  h2 {
+    font-size: 1.8rem !important;
+  }
+  
+  h3 {
+    font-size: 1.4rem !important;
+  }
+  
+  p {
+    font-size: 1.05rem;
+  }
+}
+
+/* Galaxy Z Fold 5 (280px - 717px) */
+@media (min-width: 280px) and (max-width: 717px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  h2 {
+    font-size: 1.4rem !important;
+  }
+  
+  h3 {
+    font-size: 1.2rem !important;
+  }
+  
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Asus Zenbook Fold (280px - 1024px) */
+@media (min-width: 280px) and (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  h1 {
+    font-size: 2.2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.6rem !important;
+  }
+  
+  h3 {
+    font-size: 1.3rem !important;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* Nest Hub (1024px) */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .container {
+    padding: 0 3rem;
+  }
+  
+  h1 {
+    font-size: 3.2rem !important;
+  }
+  
+  h2 {
+    font-size: 2.4rem !important;
+  }
+  
+  h3 {
+    font-size: 1.7rem !important;
+  }
+  
+  p {
+    font-size: 1.1rem;
   }
 }
 

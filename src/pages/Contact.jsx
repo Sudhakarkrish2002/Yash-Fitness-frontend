@@ -17,18 +17,41 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message! We will get back to you soon.')
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    })
+    setIsSubmitting(true)
+    
+    try {
+      const response = await fetch('http://localhost:5000/api/contact/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        alert('Thank you for your message! We will get back to you soon.')
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        })
+      } else {
+        alert(`Message failed to send: ${result.message}`)
+      }
+    } catch (error) {
+      console.error('Contact form error:', error)
+      alert('Message failed to send. Please try again later.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -48,7 +71,7 @@ const Contact = () => {
             <h2>Send us a Message</h2>
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="name">Full Name *</label>
+                <label htmlFor="name">Full Name</label>
                 <input
                   type="text"
                   id="name"
@@ -60,7 +83,7 @@ const Contact = () => {
               </div>
               
               <div className="form-group">
-                <label htmlFor="email">Email Address *</label>
+                <label htmlFor="email">Email Address</label>
                 <input
                   type="email"
                   id="email"
@@ -83,7 +106,7 @@ const Contact = () => {
               </div>
               
               <div className="form-group">
-                <label htmlFor="subject">Subject *</label>
+                <label htmlFor="subject">Subject</label>
                 <select
                   id="subject"
                   name="subject"
@@ -101,7 +124,7 @@ const Contact = () => {
               </div>
               
               <div className="form-group">
-                <label htmlFor="message">Message *</label>
+                <label htmlFor="message">Message</label>
                 <textarea
                   id="message"
                   name="message"
@@ -112,8 +135,8 @@ const Contact = () => {
                 ></textarea>
               </div>
               
-              <button type="submit" className="submit-button">
-                Send Message
+              <button type="submit" className="submit-button" disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
@@ -127,7 +150,7 @@ const Contact = () => {
               <div className="info-content">
                 <h3>Address</h3>
                 <p>Yash Fitness & Gym<br />First Floor, Calpurnia Towers<br />Shanmuga Nagar, Tiruchirappalli<br />Sholanganallur, Tamil Nadu 620102<br />India</p>
-                <a href="https://maps.google.com/?q=Calpurnia+Towers+Shanmuga+Nagar+Tiruchirappalli+Sholanganallur+Tamil+Nadu+620102" target="_blank" rel="noopener noreferrer" className="map-link">
+                <a href="https://maps.app.goo.gl/NbpupsXFiZpdWkfZ6?g_st=ac" target="_blank" rel="noopener noreferrer" className="map-link">
                   🗺️ View on Google Maps
                 </a>
               </div>
@@ -171,7 +194,7 @@ const Contact = () => {
           <h2>Find Us in Trichy</h2>
           <div className="map-container">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125323.45678901234!2d78.6569!3d10.7905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf3670e5a6721%3A0x6c38c3e8b8b8b8b8!2sCalpurnia+Towers+Shanmuga+Nagar+Tiruchirappalli+Sholanganallur+Tamil+Nadu+620102!5e0!3m2!1sen!2sin!4v1234567890123"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125323.45678901234!2d78.6569!3d10.7905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf3670e5a6721%3A0x6c38c3e8b8b8b8b8!2sYash+Fitness+%26+Gym!5e0!3m2!1sen!2sin!4v1234567890123"
               width="100%"
               height="450"
               style={{ border: 0 }}

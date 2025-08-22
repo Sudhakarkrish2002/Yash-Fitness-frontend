@@ -68,7 +68,8 @@ button:focus-visible {
 }
 
 /* Enhanced Responsive Typography */
-@media (max-width: 480px) {
+/* Small screens (mobile) - sm */
+@media (max-width: 640px) {
   h1 {
     font-size: 2em;
     line-height: 1.2;
@@ -79,7 +80,8 @@ button:focus-visible {
   }
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
+/* Medium screens (tablet) - md */
+@media (min-width: 641px) and (max-width: 768px) {
   h1 {
     font-size: 2.5em;
     line-height: 1.15;
@@ -90,6 +92,7 @@ button:focus-visible {
   }
 }
 
+/* Large screens (laptop) - lg */
 @media (min-width: 769px) and (max-width: 1024px) {
   h1 {
     font-size: 2.8em;
@@ -101,7 +104,8 @@ button:focus-visible {
   }
 }
 
-@media (min-width: 1025px) and (max-width: 1440px) {
+/* Extra large screens (desktop) - xl */
+@media (min-width: 1025px) and (max-width: 1280px) {
   h1 {
     font-size: 3em;
     line-height: 1.1;
@@ -112,7 +116,8 @@ button:focus-visible {
   }
 }
 
-@media (min-width: 1441px) {
+/* 2XL screens (ultra-wide) - 2xl */
+@media (min-width: 1281px) {
   h1 {
     font-size: 3.5em;
     line-height: 1.1;

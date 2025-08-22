@@ -1,6 +1,6 @@
 .contact {
   min-height: 100vh;
-  background: #f8f9fa;
+  background: #0a0a0a;
 }
 
 /* Hero Section */
@@ -29,6 +29,7 @@
   position: relative;
   z-index: 1;
   padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
 }
 
 .contact-content {
@@ -39,16 +40,19 @@
 
 /* Contact Form */
 .contact-form-section {
-  background: white;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 255, 0, 0.3);
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
 }
 
 .contact-form-section h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #333;
+  color: #ffffff;
 }
 
 .contact-form {
@@ -65,24 +69,34 @@
 .form-group label {
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: #ffffff;
+}
+
+.form-group label::after {
+  content: " *";
+  color: #ff0000;
+  font-weight: bold;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   padding: 0.8rem;
-  border: 2px solid #e1e5e9;
+  border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #90EE90;
+  border-color: #00ff00;
+  background: rgba(0, 255, 0, 0.05);
+  box-shadow: 0 0 0 3px rgba(0, 255, 0, 0.1);
 }
 
 .form-group textarea {
@@ -91,8 +105,8 @@
 }
 
 .submit-button {
-  background: linear-gradient(45deg, #90EE90, #32CD32);
-  color: black;
+  background: linear-gradient(45deg, #00ff00, #00cc00);
+  color: #000000;
   border: none;
   padding: 1rem 2rem;
   border-radius: 25px;
@@ -104,22 +118,24 @@
 }
 
 .submit-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(144, 238, 144, 0.4);
+  /* Hover effect removed for better user experience */
 }
 
 /* Contact Information */
 .contact-info-section {
-  background: white;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 255, 0, 0.3);
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
 }
 
 .contact-info-section h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #333;
+  color: #ffffff;
 }
 
 .info-item {
@@ -132,7 +148,7 @@
 }
 
 .info-item:hover {
-  background: #f8f9fa;
+  /* Hover effect removed for better user experience */
 }
 
 .info-icon {
@@ -147,11 +163,11 @@
 .info-content h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: #00ff00;
 }
 
 .info-content p {
-  color: #666;
+  color: #cccccc;
   line-height: 1.6;
   margin-bottom: 0.5rem;
 }
@@ -178,7 +194,7 @@
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 255, 0, 0.1);
+  box-shadow: none;
   border: 2px solid rgba(0, 255, 0, 0.3);
 }
 
@@ -192,7 +208,7 @@
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   max-width: 220px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: none;
 }
 
 .map-info h3 {
@@ -229,20 +245,16 @@
   background: #000000;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: none;
 }
 
 .map-link:hover {
-  background: #ffffff;
-  color: #000000;
-  border-color: #000000;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  /* Hover effect removed for better user experience */
 }
 
 /* Enhanced Responsive Design for All Devices */
-/* Mobile Phones (320px - 480px) */
-@media (max-width: 480px) {
+/* Small screens (mobile) - sm */
+@media (max-width: 640px) {
   .contact-hero {
     padding: 2rem 1rem;
   }
@@ -341,8 +353,8 @@
   }
 }
 
-/* Large Mobile Phones (481px - 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
+/* Medium screens (tablet) - md */
+@media (min-width: 641px) and (max-width: 768px) {
   .contact-hero {
     padding: 3rem 1.5rem;
   }
@@ -423,7 +435,7 @@
   }
 }
 
-/* Tablets (769px - 1024px) */
+/* Large screens (laptop) - lg */
 @media (min-width: 769px) and (max-width: 1024px) {
   .contact-content {
     grid-template-columns: 1fr 1fr;
@@ -456,8 +468,8 @@
   }
 }
 
-/* Laptops (1025px - 1440px) */
-@media (min-width: 1025px) and (max-width: 1440px) {
+/* Extra large screens (desktop) - xl */
+@media (min-width: 1025px) and (max-width: 1280px) {
   .info-icon {
     font-size: 2rem;
     min-width: 40px;
@@ -470,8 +482,8 @@
   }
 }
 
-/* Large Monitors (1441px and above) */
-@media (min-width: 1441px) {
+/* 2XL screens (ultra-wide) - 2xl */
+@media (min-width: 1281px) {
   .info-icon {
     font-size: 2.2rem;
     min-width: 45px;

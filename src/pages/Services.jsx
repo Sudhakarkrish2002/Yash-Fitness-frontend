@@ -1,5 +1,6 @@
 import './Services.css'
 import gymLogo from '../assets/gym logo.jpeg'
+import { Link } from 'react-router-dom'
 
 const Services = () => {
   return (
@@ -94,9 +95,9 @@ const Services = () => {
           <div className="fees-grid">
             <div className="fee-card basic">
               <div className="fee-header">
-                <h3>Basic Plan</h3>
+                <h3>1 Month Plan</h3>
                 <div className="fee-price">
-                  <span className="amount">₹1,999</span>
+                  <span className="amount">₹1,399</span>
                   <span className="period">/month</span>
                 </div>
               </div>
@@ -107,47 +108,53 @@ const Services = () => {
                   <li>✅ Locker room access</li>
                   <li>✅ Free parking</li>
                   <li>✅ Basic fitness assessment</li>
-                  <li>❌ Personal training</li>
-                  <li>❌ Nutrition consultation</li>
+                  <li>✅ Personal training guidance</li>
+                  <li>✅ Nutrition consultation</li>
                 </ul>
               </div>
-              <button className="fee-button">Choose Basic</button>
+              <Link to="/register" className="fee-button-link">
+                <button className="fee-button">Choose 1 Month</button>
+              </Link>
             </div>
 
             <div className="fee-card premium featured">
               <div className="fee-badge">Most Popular</div>
               <div className="fee-header">
-                <h3>Premium Plan</h3>
+                <h3>3 Months Plan</h3>
                 <div className="fee-price">
-                  <span className="amount">₹3,499</span>
-                  <span className="period">/month</span>
+                  <span className="amount">₹2,999</span>
+                  <span className="period">/3 months</span>
                 </div>
+                <div className="fee-savings">Save ₹1,198</div>
               </div>
               <div className="fee-features">
                 <ul>
-                  <li>✅ Everything in Basic</li>
+                  <li>✅ Everything in 1 Month Plan</li>
                   <li>✅ Unlimited group classes</li>
-                  <li>✅ Personal training (2 sessions/month)</li>
-                  <li>✅ Nutrition consultation</li>
+                  <li>✅ Personal training (4 sessions)</li>
+                  <li>✅ Advanced nutrition consultation</li>
                   <li>✅ Recovery services</li>
-                  <li>✅ Guest passes (2/month)</li>
+                  <li>✅ Guest passes (3/month)</li>
                   <li>✅ Priority booking</li>
                 </ul>
               </div>
-              <button className="fee-button featured">Choose Premium</button>
+              <Link to="/register" className="fee-button-link">
+                <button className="fee-button featured">Choose 3 Months</button>
+              </Link>
             </div>
 
             <div className="fee-card elite">
               <div className="fee-header">
-                <h3>Elite Plan</h3>
+                <h3>1 Year Plan</h3>
                 <div className="fee-price">
-                  <span className="amount">₹5,999</span>
-                  <span className="period">/month</span>
+                  <span className="amount">₹7,499</span>
+                  <span className="period">/year</span>
                 </div>
+                <div className="fee-savings">Save ₹9,289</div>
               </div>
               <div className="fee-features">
                 <ul>
-                  <li>✅ Everything in Premium</li>
+                  <li>✅ Everything in 3 Months Plan</li>
                   <li>✅ Unlimited personal training</li>
                   <li>✅ Exclusive classes</li>
                   <li>✅ Monthly fitness assessment</li>
@@ -156,7 +163,9 @@ const Services = () => {
                   <li>✅ Personal locker</li>
                 </ul>
               </div>
-              <button className="fee-button">Choose Elite</button>
+              <Link to="/register" className="fee-button-link">
+                <button className="fee-button">Choose 1 Year</button>
+              </Link>
             </div>
           </div>
 
