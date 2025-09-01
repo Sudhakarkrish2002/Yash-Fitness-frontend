@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Registration.css'
 import gymLogo from '../assets/gym logo.jpeg'
+import { api } from '../utils/api'
+import { debugRegistration } from '../utils/debug'
 
 const Registration = () => {
   const [formData, setFormData] = useState({
@@ -71,15 +73,27 @@ const Registration = () => {
     setIsSubmitting(true)
     
     try {
-      const response = await fetch('http://localhost:5000/api/registration/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      })
-
-      const result = await response.json()
+      // Debug: Log form data and validate
+      console.log('🔍 Starting registration submission...');
+      debugRegistration.logFormData(formData);
+      
+      // Validate form data
+      const validation = debugRegistration.validateFormData(formData);
+      if (!validation.isValid) {
+        console.error('❌ Form validation failed:', validation.errors);
+        alert(`Form validation failed:\n${validation.errors.join('\n')}`);
+        return;
+      }
+      
+      // Test API connection
+      const apiConnected = await debugRegistration.testAPI();
+      if (!apiConnected) {
+        alert('Cannot connect to server. Please check if the server is running.');
+        return;
+      }
+      
+      console.log('✅ Form validation passed, submitting...');
+      const result = await api.submitRegistration(formData)
 
       if (result.success) {
         alert('Registration submitted successfully! We will contact you soon.')
@@ -97,8 +111,16 @@ const Registration = () => {
         alert(`Registration failed: ${result.message}`)
       }
     } catch (error) {
-      console.error('Registration error:', error)
-      alert('Registration failed. Please try again later.')
+      console.error('❌ Registration error:', error)
+      
+      // More detailed error messages
+      if (error.message.includes('Failed to fetch')) {
+        alert('Network error: Cannot connect to server. Please check your internet connection and try again.')
+      } else if (error.message.includes('already exists')) {
+        alert('This email is already registered. Please use a different email address.')
+      } else {
+        alert(`Registration failed: ${error.message || 'Please try again later.'}`)
+      }
     } finally {
       setIsSubmitting(false)
     }

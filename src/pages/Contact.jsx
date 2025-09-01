@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './Contact.css'
+import { api } from '../utils/api'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -24,15 +25,7 @@ const Contact = () => {
     setIsSubmitting(true)
     
     try {
-      const response = await fetch('http://localhost:5000/api/contact/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      })
-
-      const result = await response.json()
+      const result = await api.submitContact(formData)
 
       if (result.success) {
         alert('Thank you for your message! We will get back to you soon.')

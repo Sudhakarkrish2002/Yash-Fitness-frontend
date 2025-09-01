@@ -6,6 +6,8 @@ import Services from './pages/Services'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Registration from './pages/Registration'
+import Admin from './pages/Admin'
+import TestRegistration from './pages/TestRegistration'
 import Footer from './components/Footer'
 import useScrollToTop from './hooks/useScrollToTop'
 
@@ -33,6 +35,8 @@ function AppContent() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/register" element={<Registration />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/test-registration" element={<TestRegistration />} />
           
           {/* Catch all route */}
           <Route path="*" element={<Home />} />
